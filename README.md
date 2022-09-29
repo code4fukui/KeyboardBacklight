@@ -2,6 +2,8 @@
 
 a driver to manipulate backlight of keyboard. (for MacBook)
 
+- [DEMO](https://code4fukui.github.io/KeyboardBacklight/)
+
 ## Usage
 
 ```html
