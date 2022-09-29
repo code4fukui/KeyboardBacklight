@@ -7,7 +7,7 @@ a driver to manipulate backlight of keyboard. (for MacBook)
 ```html
 <button id=btn>connect</button>
 <script type="module">
-import { KeyboardBacklight } from "./KeyboardBacklight.js";
+import { KeyboardBacklight } from "https://code4fukui.github.io/KeyboardBacklight/KeyboardBacklight.js";
 
 const kb = await KeyboardBacklight.create();
 
