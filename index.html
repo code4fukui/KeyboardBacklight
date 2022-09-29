@@ -1,0 +1,67 @@
+<!DOCTYPE html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width">
+<title>KeyboardBacklight - WebHID</title>
+</head><body>
+
+<h1>KeyboardBacklight - WebHID</h1>
+
+<button id=btn>connect</button><br>
+<label><input type=checkbox id=chk>backlight</label><br>
+<label><input type=checkbox id=chk2>backlight blink</label><input id=delay size=4 value=50>msec<br>
+<label><input type=checkbox id=chk3>backlight timer</label> after <input id=delay2 size=4 value=3>min<br>
+
+<hr>
+<a href=https://github.com/code4fukui/KeyboardBacklight/>src on GitHub</a>
+
+<script type="module">
+import { KeyboardBacklight } from "./KeyboardBacklight.js";
+
+const kb = await KeyboardBacklight.create();
+
+btn.addEventListener("click", async () => {
+  await kb.connect();
+});
+
+chk.addEventListener("input", async (e) => {
+  await kb.backlight(chk.checked);
+});
+
+let t = null;
+chk2.addEventListener("input", (e) => {
+  if (!t) {
+    let b = true;
+    const f = () => {
+      kb.backlight(b);
+      b = !b;
+      t = setTimeout(f, delay.value);
+    };
+    f();
+  } else {
+    clearTimeout(t);
+    t = null;
+  }
+});
+
+let t2 = null;
+chk3.addEventListener("input", (e) => {
+  if (!t2) {
+    let b = true;
+    const f = () => {
+      kb.backlight(b);
+      b = !b;
+      t2 = setTimeout(f, 100);
+    };
+    t2 = setTimeout(f, delay2.value * 60 * 1000);
+  } else {
+    clearTimeout(t2);
+    t2 = null;
+  }
+});
+
+</script>
+
+<style>
+button, label {
+  margin: 1em;
+  font-size: 130%;
+}
+</style>
