@@ -1,5 +1,7 @@
 # KeyboardBacklight
 
+> 日本語のREADMEはこちらです: [README.ja.md](README.ja.md)
+
 A driver to manipulate the backlight of a keyboard, specifically for MacBooks.
 
 ## Demo
