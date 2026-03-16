@@ -32,4 +32,4 @@ btn.addEventListener("click", async () => {
 ```
 
 ## License
-MIT
+MIT License — see [LICENSE](LICENSE).
