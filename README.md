@@ -1,8 +1,17 @@
 # KeyboardBacklight
 
-a driver to manipulate backlight of keyboard. (for MacBook)
+> 日本語のREADMEはこちらです: [README.ja.md](README.ja.md)
 
-- [DEMO](https://code4fukui.github.io/KeyboardBacklight/)
+A driver to manipulate the backlight of a keyboard, specifically for MacBooks.
+
+## Demo
+[Live demo](https://code4fukui.github.io/KeyboardBacklight/)
+
+## Features
+- Control the backlight of a keyboard connected to a MacBook
+- Toggle the backlight on/off
+- Blink the backlight
+- Set a timer to turn the backlight on/off
 
 ## Usage
 
@@ -21,3 +30,6 @@ btn.addEventListener("click", async () => {
 });
 </script>
 ```
+
+## License
+MIT License — see [LICENSE](LICENSE).
